@@ -4,6 +4,7 @@ use raylib::consts::KeyboardKey::*;
 const SCREEN_WIDTH: f32 = 1280.0;
 const SCREEN_HEIGHT: f32 = 720.0;
 
+// This is the structure of the ball
 struct Ball {
     position: Vector2,
     speed: Vector2,
@@ -11,6 +12,7 @@ struct Ball {
 }
 
 fn main() {
+    // Initialize the raylib library
     let (mut rl, thread) = raylib::init()
         .size(SCREEN_WIDTH as i32, SCREEN_HEIGHT as i32)
         .title("Bouncing Ball")
@@ -18,8 +20,10 @@ fn main() {
         .resizable()
         .build();
 
+    // Sets the FPS to 60
     rl.set_target_fps(60);
 
+    //Sets the ball
     let mut ball = Ball {
         position: Vector2::new(SCREEN_WIDTH / 2.0, SCREEN_HEIGHT / 2.0),
         speed: Vector2::new(6.0, 5.0),
@@ -28,7 +32,8 @@ fn main() {
 
     let mut pause = false;
     let frame_count = 0;
-
+    
+    //While the window isn't closed
     while !rl.window_should_close() {
         /* UPDATE */
         if rl.is_key_pressed(KEY_SPACE) {
@@ -37,6 +42,7 @@ fn main() {
         if !pause {
             ball.position += ball.speed;
 
+            //Collision with the ball and the window borders
             if ball.position.x >= SCREEN_WIDTH - ball.radius || ball.position.x <= ball.radius {
                 ball.speed.x *= -1.0;
             }
@@ -63,6 +69,7 @@ fn main() {
             Color::WHITE,
         );
 
+        //Blinking "PAUSED" text
         if pause && (frame_count / 30) % 2 == 0 {
             d.draw_text(
                 "PAUSED",
