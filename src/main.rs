@@ -17,7 +17,6 @@ fn main() {
         .size(SCREEN_WIDTH as i32, SCREEN_HEIGHT as i32)
         .title("Bouncing Ball")
         .vsync()
-        .resizable()
         .build();
 
     // Sets the FPS to 60
