@@ -1,5 +1,5 @@
-use raylib::prelude::*;
 use raylib::consts::KeyboardKey::*;
+use raylib::prelude::*;
 
 const SCREEN_WIDTH: f32 = 1280.0;
 const SCREEN_HEIGHT: f32 = 720.0;
@@ -31,7 +31,7 @@ fn main() {
 
     let mut pause = false;
     let frame_count = 0;
-    
+
     //While the window isn't closed
     while !rl.window_should_close() {
         /* UPDATE */
