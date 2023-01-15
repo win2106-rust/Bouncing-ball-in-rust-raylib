@@ -1,6 +1,6 @@
 # Bouncing ball in rust Raylib
-Uses the raylib crate. [Raylib](https://crates.io/crates/raylib)
+Uses the [raylib](https://crates.io/crates/raylib) crate.
 
-Must have [Cmake](https://cmake.org/download/) installed to run.
+You must have [cmake](https://cmake.org/download/) installed to run.
 
-Right now, can only run on Windows.
+Right now, it can only run on Windows.
