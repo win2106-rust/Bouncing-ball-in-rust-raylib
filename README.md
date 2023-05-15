@@ -3,4 +3,4 @@ The app uses the [raylib](https://crates.io/crates/raylib) crate. ![Rust_logo](h
 
 You must have [cmake](https://cmake.org/download/) installed to run.
 
-Right now, it can only run on Windows.
+Now, it can run on linux and windows. (Only X11 is supportted and require xorg-dev on ubuntu based distros. For RHEL based distros, sudo dnf groupinstall "X Software Development".)
